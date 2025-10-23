@@ -15,13 +15,20 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "Início", href: "#hero" },
-    { label: "Sobre", href: "#about" },
-    { label: "Produtos", href: "#products" },
-    { label: "Contato", href: "#contact" },
+    { label: "Início", href: "#hero", isHash: true },
+    { label: "Sobre", href: "#about", isHash: true },
+    { label: "Produtos", href: "#products", isHash: true },
+    { label: "Vitrine", href: "/vitrine", isHash: false },
+    { label: "Contato", href: "#contact", isHash: true },
   ];
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href: string, isHash: boolean) => {
+    if (!isHash) {
+      window.location.href = href;
+      setIsMobileMenuOpen(false);
+      return;
+    }
+    
     const element = document.querySelector(href);
     if (element) {
       const headerOffset = 80;
@@ -48,7 +55,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button
-            onClick={() => scrollToSection("#hero")}
+            onClick={() => window.location.href = "/"}
             className="flex items-center gap-3 transition-smooth hover:opacity-80"
           >
             <img
@@ -63,7 +70,7 @@ const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => scrollToSection(item.href, item.isHash)}
                 className="text-foreground/80 hover:text-primary transition-smooth font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
               >
                 {item.label}
@@ -94,7 +101,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => scrollToSection(item.href, item.isHash)}
                   className="text-foreground/80 hover:text-primary transition-smooth font-medium text-left py-2"
                 >
                   {item.label}
