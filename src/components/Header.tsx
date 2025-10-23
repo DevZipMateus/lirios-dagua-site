@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +16,25 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Handle scroll after navigation to home with hash
+    if (location.pathname === "/" && location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   const navItems = [
     { label: "Início", href: "#hero", isHash: true },
@@ -23,12 +45,20 @@ const Header = () => {
   ];
 
   const scrollToSection = (href: string, isHash: boolean) => {
+    setIsMobileMenuOpen(false);
+    
     if (!isHash) {
-      window.location.href = href;
-      setIsMobileMenuOpen(false);
+      navigate(href);
       return;
     }
     
+    // If we're not on the home page, navigate there first with the hash
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+      return;
+    }
+    
+    // We're on the home page, so scroll to the section
     const element = document.querySelector(href);
     if (element) {
       const headerOffset = 80;
@@ -40,7 +70,6 @@ const Header = () => {
         behavior: "smooth",
       });
     }
-    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -55,7 +84,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button
-            onClick={() => window.location.href = "/"}
+            onClick={() => navigate("/")}
             className="flex items-center gap-3 transition-smooth hover:opacity-80"
           >
             <img
