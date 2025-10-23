@@ -27,7 +27,7 @@ const Footer = () => {
               className="h-16 w-auto mb-4"
             />
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Sua loja completa de artigos religiosos em Imperatriz-MA. 
+              Sua loja completa de artigos religiosos em Santa Maria-RS. 
               Tudo para o seu axé.
             </p>
           </div>
@@ -87,7 +87,7 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
                   Av Presidente Vargas, 501<br />
-                  Imperatriz - MA
+                  Santa Maria - RS
                 </span>
               </li>
               <li className="flex items-center gap-2">
