@@ -47,7 +47,7 @@ const Vitrine = () => {
     <div className="h-screen flex flex-col overflow-hidden">
       <Header />
       <main className="flex-1 overflow-hidden mt-20">
-        <div className="w-full h-full">
+        <div className="w-full h-full pb-[63px]">
           <iframe 
             src="https://v4.egestor.com.br/vitrine/?s=liriosdagua" 
             style={{ width: '100%', height: `${iframeHeight}px`, border: 'none' }}
