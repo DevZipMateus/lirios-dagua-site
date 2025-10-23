@@ -31,20 +31,14 @@ const Vitrine = () => {
     // Recalcular ao redimensionar
     window.addEventListener('resize', calculateHeight);
 
-    // Prevenir scroll na página
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-
     // Cleanup
     return () => {
       window.removeEventListener('resize', calculateHeight);
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
     };
   }, []);
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden">
+    <div className="flex flex-col" style={{ height: 'calc(100vh - 63px)' }}>
       <Header />
       <main className="overflow-hidden" style={{ marginTop: '80px', height: `${iframeHeight}px` }}>
         <iframe 
