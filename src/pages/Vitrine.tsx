@@ -46,14 +46,12 @@ const Vitrine = () => {
   return (
     <div className="h-screen flex flex-col overflow-hidden">
       <Header />
-      <main className="flex-1 overflow-hidden" style={{ marginTop: '80px' }}>
-        <div className="w-full h-full">
-          <iframe 
-            src="https://v4.egestor.com.br/vitrine/?s=liriosdagua" 
-            style={{ width: '100%', height: `${iframeHeight}px`, border: 'none' }}
-            title="Vitrine de Produtos Lírios D'agua"
-          />
-        </div>
+      <main className="overflow-hidden" style={{ marginTop: '80px', height: `${iframeHeight}px` }}>
+        <iframe 
+          src="https://v4.egestor.com.br/vitrine/?s=liriosdagua" 
+          style={{ width: '100%', height: '100%', border: 'none' }}
+          title="Vitrine de Produtos Lírios D'agua"
+        />
       </main>
     </div>
   );
