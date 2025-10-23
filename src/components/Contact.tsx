@@ -7,7 +7,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Endereço",
       content: "Av Presidente Vargas, 501",
-      subContent: "Imperatriz - MA",
+      subContent: "Santa Maria - RS",
     },
     {
       icon: Phone,
@@ -77,22 +77,6 @@ const Contact = () => {
                 )}
               </div>
             ))}
-          </div>
-
-          {/* Map */}
-          <div className="bg-card rounded-2xl p-2 shadow-soft border border-border/50 mb-12 animate-fade-in">
-            <div className="rounded-xl overflow-hidden h-[400px]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.123456789!2d-47.491234!3d-5.526789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzEnMzYuNCJTIDQ3wrAyOSczMC40Ilc!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Localização Lírios D'agua"
-              />
-            </div>
           </div>
 
           {/* Instagram CTA */}
