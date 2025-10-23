@@ -32,8 +32,8 @@ const About = () => {
           </div>
 
           {/* Content with Video */}
-          <div className="space-y-8 mb-16">
-            {/* Text Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Text Content - Left */}
             <div className="space-y-6 animate-fade-in">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 A Lírios D'agua é referência em artigos religiosos em Imperatriz-MA, 
@@ -46,8 +46,8 @@ const About = () => {
               </p>
             </div>
 
-            {/* Video */}
-            <div className="max-w-md mx-auto rounded-2xl overflow-hidden shadow-elegant animate-fade-in">
+            {/* Video - Right */}
+            <div className="max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-elegant animate-fade-in">
               <video
                 autoPlay
                 loop
