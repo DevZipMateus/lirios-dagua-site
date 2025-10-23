@@ -29,10 +29,36 @@ const About = () => {
               Sobre nós
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-6 rounded-full" />
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A Lírios D'agua é referência em artigos religiosos em Imperatriz-MA, 
-              oferecendo produtos de qualidade para umbanda, candomblé e outras práticas espirituais.
-            </p>
+          </div>
+
+          {/* Content with Video */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Text Content - Left */}
+            <div className="space-y-6 animate-fade-in">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                A Lírios D'agua é referência em artigos religiosos em Imperatriz-MA, 
+                oferecendo produtos de qualidade para umbanda, candomblé e outras práticas espirituais.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Com anos de experiência e dedicação, nos orgulhamos de servir nossa comunidade 
+                com respeito às tradições religiosas afro-brasileiras, oferecendo um espaço 
+                acolhedor e produtos autênticos para sua jornada espiritual.
+              </p>
+            </div>
+
+            {/* Video - Right */}
+            <div className="rounded-2xl overflow-hidden shadow-elegant animate-fade-in">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto"
+              >
+                <source src="/1761057893801_0_copy_8a399606_3e98_4c53_b5f1_e701c8e3ca38.mov" type="video/quicktime" />
+                Seu navegador não suporta a reprodução de vídeos.
+              </video>
+            </div>
           </div>
 
           {/* Features Grid */}
