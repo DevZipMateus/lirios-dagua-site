@@ -55,7 +55,7 @@ const About = () => {
                 playsInline
                 className="w-full h-auto"
               >
-                <source src="/1761057893801_0_copy_8a399606_3e98_4c53_b5f1_e701c8e3ca38.mov" type="video/quicktime" />
+                <source src="/1761057893801_0_copy_8a399606_3e98_4c53_b5f1_e701c8e3ca38.mp4" type="video/mp4" />
                 Seu navegador não suporta a reprodução de vídeos.
               </video>
             </div>
