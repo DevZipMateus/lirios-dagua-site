@@ -59,7 +59,8 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection("#products")}
-              className="gradient-primary text-primary-foreground shadow-elegant hover:shadow-lg transition-smooth px-8"
+              className="shadow-elegant hover:shadow-lg transition-smooth px-8 text-white"
+              style={{ background: 'var(--gradient-primary)' }}
             >
               Nossos produtos
             </Button>
@@ -67,7 +68,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("#contact")}
-              className="border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground transition-smooth px-8"
+              className="border-primary/60 text-primary hover:bg-primary hover:text-white transition-smooth px-8"
             >
               Entre em contato
             </Button>

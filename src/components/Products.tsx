@@ -83,20 +83,20 @@ const Products = () => {
 
           {/* Call to Action */}
           <div className="mt-16 text-center">
-            <div className="bg-gradient-primary rounded-2xl p-8 md:p-10 text-primary-foreground shadow-elegant animate-fade-in">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            <div className="rounded-2xl p-8 md:p-10 shadow-elegant animate-fade-in" style={{ background: 'var(--gradient-primary)' }}>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                 Visite nossa loja
               </h3>
-              <p className="text-lg leading-relaxed opacity-95 mb-6 max-w-2xl mx-auto">
+              <p className="text-lg leading-relaxed mb-6 max-w-2xl mx-auto text-white/95">
                 Venha conhecer nossa loja física e confira pessoalmente toda a variedade 
                 de produtos que temos disponíveis para você.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-primary-foreground/90">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-white/90">
                 <div className="flex items-center gap-2">
                   <span className="font-semibold">Seg-Sex:</span>
                   <span>09:00-12:00 e 14:00-18:30</span>
                 </div>
-                <div className="hidden sm:block w-px h-6 bg-primary-foreground/30" />
+                <div className="hidden sm:block w-px h-6 bg-white/30" />
                 <div className="flex items-center gap-2">
                   <span className="font-semibold">Sáb:</span>
                   <span>09:00-12:00</span>

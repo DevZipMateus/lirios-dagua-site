@@ -57,12 +57,12 @@ const About = () => {
           </div>
 
           {/* Additional Info */}
-          <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-primary-foreground shadow-elegant animate-fade-in">
+          <div className="rounded-2xl p-8 md:p-12 shadow-elegant animate-fade-in" style={{ background: 'var(--gradient-primary)' }}>
             <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                 Nossa missão
               </h3>
-              <p className="text-lg leading-relaxed opacity-95">
+              <p className="text-lg leading-relaxed text-white/95">
                 Proporcionar aos nossos clientes acesso a produtos autênticos e de qualidade 
                 para suas práticas espirituais, sempre com respeito às tradições religiosas 
                 afro-brasileiras e com atendimento acolhedor e especializado.
