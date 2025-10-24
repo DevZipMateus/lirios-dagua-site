@@ -1,38 +1,72 @@
-import { Flame, Image, Shirt, Sparkles, Music, Book } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+// Import product images
+import velasRituais from "@/assets/velas-rituais.jpg";
+import defumacoes from "@/assets/defumacoes.jpg";
+import polvora from "@/assets/polvora.jpg";
+import pembas from "@/assets/pembas.jpg";
+import imagensSantos from "@/assets/imagens-santos.jpg";
+import imagensExus from "@/assets/imagens-exus.jpg";
+import imagensPombaGiras from "@/assets/imagens-pomba-giras.jpg";
+import baralhosCiganos from "@/assets/baralhos-ciganos.jpg";
+import baralhosPombaGira from "@/assets/baralhos-pomba-gira.jpg";
+import baralhosExu from "@/assets/baralhos-exu.jpg";
+import guias from "@/assets/guias.jpg";
+import roupasUmbanda from "@/assets/roupas-umbanda.jpg";
+import roupasPombaGira from "@/assets/roupas-pomba-gira.jpg";
+import roupasExu from "@/assets/roupas-exu.jpg";
+import perfumes from "@/assets/perfumes.jpg";
+import sinetas from "@/assets/sinetas.jpg";
+import chapeusPombaGira from "@/assets/chapeus-pomba-gira.jpg";
+import chapeusExu from "@/assets/chapeus-exu.jpg";
+import tambores from "@/assets/tambores.jpg";
+import ages from "@/assets/ages.jpg";
+import charutos from "@/assets/charutos.jpg";
 
 const Products = () => {
-  const categories = [
-    {
-      icon: Flame,
-      title: "Velas e defumações",
-      items: ["Velas rituais", "Defumações", "Pólvora", "Pembas"],
-    },
-    {
-      icon: Image,
-      title: "Imagens sagradas",
-      items: ["Imagens de santos", "Imagens de exus", "Imagens de pomba giras"],
-    },
-    {
-      icon: Book,
-      title: "Baralhos e guias",
-      items: ["Baralhos ciganos", "Baralhos para pomba giras", "Baralhos para exus", "Guias"],
-    },
-    {
-      icon: Shirt,
-      title: "Roupas",
-      items: ["Roupas para umbanda", "Roupas para pomba gira", "Roupas para exu"],
-    },
-    {
-      icon: Sparkles,
-      title: "Acessórios",
-      items: ["Perfumes", "Sinetas", "Chapéus para pomba gira", "Chapéus para exu"],
-    },
-    {
-      icon: Music,
-      title: "Instrumentos",
-      items: ["Tambores", "Agês", "Charutos"],
-    },
+  const navigate = useNavigate();
+
+  const products = [
+    { name: "Velas rituais", image: velasRituais },
+    { name: "Defumações", image: defumacoes },
+    { name: "Pólvora", image: polvora },
+    { name: "Pembas", image: pembas },
+    { name: "Imagens de santos", image: imagensSantos },
+    { name: "Imagens de exus", image: imagensExus },
+    { name: "Imagens de pomba giras", image: imagensPombaGiras },
+    { name: "Baralhos ciganos", image: baralhosCiganos },
+    { name: "Baralhos para pomba giras", image: baralhosPombaGira },
+    { name: "Baralhos para exus", image: baralhosExu },
+    { name: "Guias", image: guias },
+    { name: "Roupas para umbanda", image: roupasUmbanda },
+    { name: "Roupas para pomba gira", image: roupasPombaGira },
+    { name: "Roupas para exu", image: roupasExu },
+    { name: "Perfumes", image: perfumes },
+    { name: "Sinetas", image: sinetas },
+    { name: "Chapéus para pomba gira", image: chapeusPombaGira },
+    { name: "Chapéus para exu", image: chapeusExu },
+    { name: "Tambores", image: tambores },
+    { name: "Agês", image: ages },
+    { name: "Charutos", image: charutos },
   ];
+
+  // Group products into slides (5 per slide on desktop, 3 on tablet, 2 on mobile)
+  const groupedProducts = [];
+  for (let i = 0; i < products.length; i += 5) {
+    groupedProducts.push(products.slice(i, i + 5));
+  }
+
+  const handleProductClick = () => {
+    navigate("/vitrine");
+  };
 
   return (
     <section id="products" className="py-20 bg-secondary/20">
@@ -50,35 +84,52 @@ const Products = () => {
             </p>
           </div>
 
-          {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categories.map((category, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-2xl p-6 shadow-soft hover:shadow-elegant transition-smooth border border-border/50 hover:border-primary/30 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10">
-                    <category.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground">
-                    {category.title}
-                  </h3>
-                </div>
-                <ul className="space-y-2">
-                  {category.items.map((item, itemIndex) => (
-                    <li
-                      key={itemIndex}
-                      className="text-muted-foreground flex items-center gap-2"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* Products Carousel */}
+          <div className="relative px-12 mb-16">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: false,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {groupedProducts.map((group, groupIndex) => (
+                  <CarouselItem key={groupIndex}>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 py-8">
+                      {group.map((product, productIndex) => (
+                        <div
+                          key={productIndex}
+                          onClick={handleProductClick}
+                          className="flex flex-col items-center gap-4 cursor-pointer group animate-fade-in-up"
+                          style={{ animationDelay: `${productIndex * 0.1}s` }}
+                        >
+                          <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-soft hover:shadow-elegant hover:border-primary/40 transition-smooth hover:scale-105">
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <p className="text-center text-sm font-medium text-foreground group-hover:text-primary transition-smooth">
+                            {product.name}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0" />
+              <CarouselNext className="right-0" />
+            </Carousel>
           </div>
 
           {/* Call to Action */}
