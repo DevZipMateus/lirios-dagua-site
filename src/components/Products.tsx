@@ -58,12 +58,6 @@ const Products = () => {
     { name: "Charutos", image: charutos },
   ];
 
-  // Group products into slides (5 per slide on desktop, 3 on tablet, 2 on mobile)
-  const groupedProducts = [];
-  for (let i = 0; i < products.length; i += 5) {
-    groupedProducts.push(products.slice(i, i + 5));
-  }
-
   const handleProductClick = () => {
     navigate("/vitrine");
   };
@@ -90,6 +84,7 @@ const Products = () => {
               opts={{
                 align: "start",
                 loop: true,
+                slidesToScroll: 1,
               }}
               plugins={[
                 Autoplay({
@@ -100,29 +95,23 @@ const Products = () => {
               ]}
               className="w-full"
             >
-              <CarouselContent>
-                {groupedProducts.map((group, groupIndex) => (
-                  <CarouselItem key={groupIndex}>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 py-8">
-                      {group.map((product, productIndex) => (
-                        <div
-                          key={productIndex}
-                          onClick={handleProductClick}
-                          className="flex flex-col items-center gap-4 cursor-pointer group animate-fade-in-up"
-                          style={{ animationDelay: `${productIndex * 0.1}s` }}
-                        >
-                          <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-soft hover:shadow-elegant hover:border-primary/40 transition-smooth hover:scale-105">
-                            <img
-                              src={product.image}
-                              alt={product.name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <p className="text-center text-sm font-medium text-foreground group-hover:text-primary transition-smooth">
-                            {product.name}
-                          </p>
-                        </div>
-                      ))}
+              <CarouselContent className="-ml-4">
+                {products.map((product, index) => (
+                  <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
+                    <div
+                      onClick={handleProductClick}
+                      className="flex flex-col items-center gap-4 cursor-pointer group animate-fade-in-up"
+                    >
+                      <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-soft hover:shadow-elegant hover:border-primary/40 transition-smooth hover:scale-105">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <p className="text-center text-sm font-medium text-foreground group-hover:text-primary transition-smooth">
+                        {product.name}
+                      </p>
                     </div>
                   </CarouselItem>
                 ))}
