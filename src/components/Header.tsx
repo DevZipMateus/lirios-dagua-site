@@ -106,7 +106,7 @@ const Header = () => {
       
       <header
         className={`fixed left-0 right-0 z-40 transition-smooth ${
-          isHomePage ? 'top-[32px]' : 'top-0'
+          isHomePage ? 'top-[26px]' : 'top-0'
         } ${
           isScrolled
             ? "bg-background/95 backdrop-blur-md shadow-soft"
