@@ -14,6 +14,16 @@ import product7 from "@/assets/product-7.jpg";
 import product8 from "@/assets/product-8.jpg";
 import product9 from "@/assets/product-9.jpg";
 import product10 from "@/assets/product-10.jpg";
+import product11 from "@/assets/product-11.jpg";
+import product12 from "@/assets/product-12.jpg";
+import product13 from "@/assets/product-13.jpg";
+import product14 from "@/assets/product-14.jpg";
+import product15 from "@/assets/product-15.jpg";
+import product16 from "@/assets/product-16.jpg";
+import product17 from "@/assets/product-17.jpg";
+import product18 from "@/assets/product-18.jpg";
+import product19 from "@/assets/product-19.jpg";
+import product20 from "@/assets/product-20.jpg";
 
 const products = [
   { id: 1, image: product1, alt: "Caveira decorativa bege com olhos vermelhos" },
@@ -26,6 +36,14 @@ const products = [
   { id: 8, image: product8, alt: "Dado branco decorativo com pontos vermelhos" },
   { id: 9, image: product9, alt: "Dado vermelho decorativo" },
   { id: 10, image: product10, alt: "Bola 8 decorativa de sinuca" },
+  { id: 11, image: product11, alt: "Imagem decorativa espiritual com tridente" },
+  { id: 12, image: product12, alt: "Imagem decorativa espiritual com capa vermelha" },
+  { id: 13, image: product13, alt: "Imagem decorativa espiritual Exu Veludo" },
+  { id: 14, image: product14, alt: "Imagem decorativa espiritual em branco" },
+  { id: 15, image: product15, alt: "Imagem decorativa espiritual com elementos verdes" },
+  { id: 16, image: product16, alt: "Imagem decorativa espiritual Obaluaê" },
+  { id: 17, image: product17, alt: "Imagem decorativa espiritual Obaluaê em dourado" },
+  { id: 18, image: product18, alt: "Imagem decorativa espiritual Xangô" },
 ];
 
 const ProductGallery = () => {
