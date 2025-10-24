@@ -35,7 +35,7 @@ const Products = () => {
   const navigate = useNavigate();
 
   const products = [
-    { name: "Velas rituais", image: velasRituais },
+    { name: "Velas", image: velasRituais },
     { name: "Defumações", image: defumacoes },
     { name: "Pólvora", image: polvora },
     { name: "Pembas", image: pembas },
