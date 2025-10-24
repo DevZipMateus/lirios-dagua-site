@@ -17,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center gradient-hero pt-20">
+    <section id="hero" className="relative min-h-screen flex items-center gradient-hero pt-36">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           {/* Logo Grande */}

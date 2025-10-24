@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -72,14 +72,47 @@ const Header = () => {
     }
   };
 
+  const isHomePage = location.pathname === "/";
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft"
-          : "bg-transparent"
-      }`}
-    >
+    <>
+      {/* Top Bar - Only on home page */}
+      {isHomePage && (
+        <div className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground py-2 px-4">
+          <div className="container mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-sm">
+              <a 
+                href="tel:5599950-4984" 
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
+                <Phone className="w-4 h-4" />
+                <span>(55) 99950-4984</span>
+              </a>
+              
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                <span>Santa Maria - Rio Grande do Sul</span>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                <span className="hidden sm:inline">Seg-Sex: 09:00-18:30 | Sáb: 09:00-12:00</span>
+                <span className="sm:hidden">Seg-Sex: 09:00-18:30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      <header
+        className={`fixed left-0 right-0 z-50 transition-smooth ${
+          isHomePage ? 'top-[52px]' : 'top-0'
+        } ${
+          isScrolled
+            ? "bg-background/95 backdrop-blur-md shadow-soft"
+            : "bg-transparent"
+        }`}
+      >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -141,6 +174,7 @@ const Header = () => {
         )}
       </div>
     </header>
+    </>
   );
 };
 
