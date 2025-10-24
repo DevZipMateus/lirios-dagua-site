@@ -36,7 +36,7 @@ const Hero = () => {
 
           {/* H2 - Descrição da Empresa */}
           <h2 className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">
-            Sua loja completa de artigos religiosos em Imperatriz
+            Sua loja completa de artigos religiosos em Santa Maria
           </h2>
 
           {/* Slogan */}

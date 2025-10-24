@@ -36,7 +36,7 @@ const About = () => {
             {/* Text Content - Left */}
             <div className="space-y-6 animate-fade-in">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                A Lírios D'agua é referência em artigos religiosos em Imperatriz-MA, 
+                A Lírios D'agua é referência em artigos religiosos em Santa Maria-RS, 
                 oferecendo produtos de qualidade para umbanda, candomblé e outras práticas espirituais.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
