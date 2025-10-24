@@ -82,11 +82,11 @@ const Header = () => {
           <div className="container mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-between gap-1 text-sm">
               <a 
-                href="tel:5599950-4984" 
+                href="tel:5555997260544" 
                 className="flex items-center gap-2 hover:opacity-80 transition-opacity"
               >
                 <Phone className="w-4 h-4" />
-                <span>(55) 99950-4984</span>
+                <span>(55) 99726-0544</span>
               </a>
               
               <div className="flex items-center gap-2">

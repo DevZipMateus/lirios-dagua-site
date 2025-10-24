@@ -1,7 +1,7 @@
 import whatsappIcon from "@/assets/whatsapp.png";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "5555999999999"; // Número do WhatsApp (substitua pelo número real)
+  const phoneNumber = "5555997260544"; // Número do WhatsApp
   const message = "Olá! Gostaria de saber mais sobre os produtos.";
   
   const handleClick = () => {
