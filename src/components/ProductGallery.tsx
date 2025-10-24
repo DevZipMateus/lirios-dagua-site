@@ -24,6 +24,13 @@ import product17 from "@/assets/product-17.jpg";
 import product18 from "@/assets/product-18.jpg";
 import product19 from "@/assets/product-19.jpg";
 import product20 from "@/assets/product-20.jpg";
+import product21 from "@/assets/product-21.jpg";
+import product22 from "@/assets/product-22.jpg";
+import product23 from "@/assets/product-23.jpg";
+import product24 from "@/assets/product-24.jpg";
+import product25 from "@/assets/product-25.jpg";
+import product26 from "@/assets/product-26.jpg";
+import product27 from "@/assets/product-27.jpg";
 
 const products = [
   { id: 1, image: product1, alt: "Caveira decorativa bege com olhos vermelhos" },
@@ -44,6 +51,13 @@ const products = [
   { id: 16, image: product16, alt: "Imagem decorativa espiritual Obaluaê" },
   { id: 17, image: product17, alt: "Imagem decorativa espiritual Obaluaê em dourado" },
   { id: 18, image: product18, alt: "Imagem decorativa espiritual Xangô" },
+  { id: 19, image: product19, alt: "Imagem decorativa espiritual com tridente e base rosa" },
+  { id: 20, image: product20, alt: "Imagem decorativa espiritual com capa vermelha e preta" },
+  { id: 21, image: product21, alt: "Imagem decorativa espiritual Exu Veludo com capa vermelha" },
+  { id: 22, image: product22, alt: "Imagem decorativa espiritual em túnica branca" },
+  { id: 23, image: product23, alt: "Imagem decorativa espiritual com adornos verdes e dourados" },
+  { id: 24, image: product24, alt: "Imagem decorativa espiritual Obaluaê com palha" },
+  { id: 25, image: product25, alt: "Imagem decorativa espiritual Xangô com vestido vermelho" },
 ];
 
 const ProductGallery = () => {
