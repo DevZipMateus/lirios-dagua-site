@@ -78,9 +78,9 @@ const Header = () => {
     <>
       {/* Top Bar - Only on home page */}
       {isHomePage && (
-        <div className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground px-4 py-1">
+        <div className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground px-4 py-0.5">
           <div className="container mx-auto">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-sm">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-1 text-sm">
               <a 
                 href="tel:5599950-4984" 
                 className="flex items-center gap-2 hover:opacity-80 transition-opacity"
@@ -106,7 +106,7 @@ const Header = () => {
       
       <header
         className={`fixed left-0 right-0 z-40 transition-smooth ${
-          isHomePage ? 'top-[40px]' : 'top-0'
+          isHomePage ? 'top-[32px]' : 'top-0'
         } ${
           isScrolled
             ? "bg-background/95 backdrop-blur-md shadow-soft"
