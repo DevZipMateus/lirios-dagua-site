@@ -1,8 +1,10 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
@@ -62,6 +64,7 @@ const products = [
 
 const ProductGallery = () => {
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
+  const navigate = useNavigate();
 
   const plugin = React.useRef(
     Autoplay({ 
@@ -112,12 +115,18 @@ const ProductGallery = () => {
                       </Card>
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-0">
-                      <div className="relative w-full h-[80vh] flex items-center justify-center">
+                      <div className="relative w-full h-[80vh] flex flex-col items-center justify-center gap-4">
                         <img
                           src={product.image}
                           alt={product.alt}
-                          className="max-w-full max-h-full object-contain rounded-lg"
+                          className="max-w-full max-h-[70vh] object-contain rounded-lg"
                         />
+                        <Button 
+                          onClick={() => navigate('/vitrine')}
+                          className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-lg shadow-elegant"
+                        >
+                          Ver mais
+                        </Button>
                       </div>
                     </DialogContent>
                   </Dialog>
