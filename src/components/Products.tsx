@@ -19,7 +19,7 @@ const Products = () => {
     },
     {
       icon: Shirt,
-      title: "Roupas litúrgicas",
+      title: "Roupas",
       items: ["Roupas para umbanda", "Roupas para pomba gira", "Roupas para exu"],
     },
     {
