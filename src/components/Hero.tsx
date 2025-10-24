@@ -51,7 +51,7 @@ const Hero = () => {
           {/* Descrição Adicional */}
           <p className="text-base md:text-lg text-foreground/70 mb-10 max-w-2xl mx-auto leading-relaxed">
             Oferecemos uma ampla variedade de produtos para sua prática espiritual, 
-            desde velas e imagens sagradas até roupas litúrgicas e acessórios para umbanda e candomblé.
+            desde velas e imagens sagradas até roupas litúrgicas e acessórios para umbanda, quimbanda e candomblé.
           </p>
 
           {/* CTA Buttons */}
